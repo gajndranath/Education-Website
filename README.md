@@ -1,6 +1,6 @@
 Education University Website (UX/UI) 
 using with HTML5, CSS3, SASS, JAVASCRIPT and GSAP
-
+Website Livepreview: https://gajndranath.github.io/Education-Website/
 Lighthouse -
 
 76 Performance
