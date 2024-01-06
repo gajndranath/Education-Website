@@ -1,0 +1,98 @@
+/* Larger Desktops */
+@media only screen and (max-width: 1100px) {
+    .brand-heading{
+        &::after {
+            width: 110% !important; 
+        }
+    }
+    .menu-btn{
+        span{
+            display: none;
+        }
+    }
+
+    .hero-section{
+        background-color: aqua;
+    }
+}
+  
+  /* Standard Tablets and Desktops */
+  @media only screen and (max-width: 992px) {
+    .brand-name{
+        .brand-heading{
+            display: none !important;
+        }
+        .brand-heading-mobile{
+            display: block !important;
+            font-size: 2rem;
+            background-color: red;
+            line-height: 0.8;
+            font-weight: 600;
+            padding: .2rem .4rem;
+            letter-spacing: 2px;
+            transform: scaleY(1.4); 
+            &::after {
+                content: ''; 
+                display: block;
+                width: 250% !important;
+                height: 2px; 
+                background-color: wheat; 
+                position: absolute;
+                bottom: -10px;
+                left: 6px;
+                border-radius: .5rem;
+            }
+        }
+    }
+    .menu-btn{
+        span{
+            display: none;
+        }
+    }
+
+    .hero-section{
+        height: 50vh;
+        background-color: red;
+    }
+
+  }
+  /* Larger Phones and Tablets */
+  @media only screen and (max-width: 768px) {
+    .hero-section{
+        height: 60vh;
+        background-color: purple;
+    }
+  }
+  
+  /* Small Tablets */
+  @media only screen and (max-width: 600px) {
+    .hero-section{
+        height: 28vh;
+        background-color: pink;
+    }
+  }
+  
+  /* iPhone 6/7/8 Plus */
+  @media only screen and (max-width: 414px) {
+    .hero-section{
+        height: 24vh;
+        background-color: green;
+    }
+  }
+  
+  /* iPhone 6/7/8 */
+  @media only screen and (max-width: 375px) {
+    .hero-section{
+        height: 22vh;
+        background-color: cyan;
+    }
+  }
+  
+  /* Mobile Phones */
+  @media only screen and (max-width: 320px) {
+    .hero-section{
+        height: 28vh;
+        background-color: red;
+    }
+  }
+  

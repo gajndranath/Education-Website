@@ -20,9 +20,12 @@ header{
               
             .brand-name {
                 cursor: default;
+                display: flex;
+                flex-direction: column;
                 .brand-heading{
                     // background-color: #ff914d;
                     font-size: 2rem;
+                    display: block; 
                     line-height: 0.8;
                     font-weight: 600;
                     padding: .2rem .4rem;
@@ -40,6 +43,10 @@ header{
                         border-radius: .5rem;
                     }
                 }
+
+                .brand-heading-mobile {
+                    display: none;
+                  }
             }
         }
         .navigation {
