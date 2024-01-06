@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate">
+    <meta http-equiv="Expires" content="Wed, 21 Oct 2022 07:28:00 GMT">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <meta name="description" content="Rajarshi School of Management and Technology">
+    <meta name="keywords" content="your, comma, separated, keywords, here">
+    <meta name="theme-color" content="#ff3131"> 
+    <meta name="author" content="Gajendra Nath Tripathi">
+    <title>RSMT</title>
+
+    <!-- Preconnect for external scripts -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <!-- Preload external scripts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" as="script" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js" as="script" integrity="sha512-+LXqbM6YLduaaxq6kNcjMsQgZQUTdZp7FTaArWYFt1nxyFKlQSMdIF/WQ/VgsReERwRD8w/9H9cahFx25UDd+g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preload" href="https://unpkg.com/feather-icons" as="script">
+
+    <!-- Stylesheets -->
+    <link rel="preload" href="./dist/css/style.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+    <!-- Manifest link -->
+    <link rel="manifest" href="./manifest.json"> 
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./script/distributions/service-worker.js') 
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+<div data-scroll-container class="smoth-scroll">
+    <header role="banner">
+        <section class="inner-header main-container flex-row">
+            <div class="brand flex-row">
+                <div class="aspect-ratio-container">
+                    <img class="logo" src="./assets/img/logo/rsmtLogo.png"
+                        alt="Rajarsh School of Technology and Management Logo">
+                </div>
+                <div class="brand-name flex-col">
+                    <h1 class="brand-heading">Rajarshi School of Management and Technology</h1>
+                </div>
+            </div>
+            <nav class="navigation flex-row">
+                <div class="menu-icon flex-col" id="toggle" aria-hidden="true" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar bar-mid"></span>
+                    <span class="bar"></span>
+                </div>
+                <button class="btn menu-btn" aria-expanded="false">
+                    <span>Menu</span>
+                </button>
+            </nav>
+        </section>
+
+        <nav class="navigation-menu" role="navigation">
+            <div class="navigation-menu-inner">
+                <header class="navigation-header">
+                    <div class="brand-name">
+                        <h2 class="sub-heading">RSMT</h2>
+                    </div>
+                    <div class="navigation-btn">
+                        <button class="btn close-btn" aria-label="Close Menu"><span>close</span><i class="fs" data-feather="x-circle"></i></button>
+                    </div>
+
+                    <section class="navigation-list flex-row">
+
+                       <div class="content-btn" role="group" aria-label="Navigation Tabs">
+                            <input type="radio" name="hover" id="tab-first">
+                            <input type="radio" name="hover" id="tab-second">
+                            <input type="radio" name="hover" id="tab-third">
+                            <input type="radio" name="hover" id="tab-fourth">
+                            <input type="radio" name="hover" id="tab-five">
+                            <input type="radio" name="hover" id="tab-six">
+                        </div>
+
+                        <div class="menu-nav">
+                            <ul class="menu-nav-ul flex-col">
+                                <li class="menu-nav-list">
+                                    <label for="tab-first" class="tab-list">
+                                        <span class="tab-title">Academics</span>
+                                    </label>
+                                </li>
+                                <li class="menu-nav-list">
+                                    <label for="tab-second" class="tab-list">
+                                        <span class="tab-title">Student</span>
+                                    </label>
+                                </li>
+                                <li class="menu-nav-list">
+                                    <label for="tab-third" class="tab-list">
+                                        <span class="tab-title">Placement</span>
+                                    </label>
+                                </li>
+                                <li class="menu-nav-list">
+                                    <label for="tab-fourth" class="tab-list">
+                                        <span class="tab-title">Facility</span>
+                                    </label>
+                                </li>
+                                <li class="menu-nav-list">
+                                    <label for="tab-five" class="tab-list">
+                                        <span class="tab-title">Infrastructure</span>
+                                    </label>
+                                </li>
+                                <li class="menu-nav-list">
+                                    <label for="tab-six" class="tab-list">
+                                        <span class="tab-title">About us</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="main-menu-content flex-col">
+                            <div class="content-list content-first">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-Admission Procedure" class="tab-list">
+                                            <span class="content-title">Admission Procedure <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-scholarship" class="tab-list">
+                                            <span class="content-title">Scholarship & Bank Finance <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-hostel-transportation" class="tab-list">
+                                            <span class="content-title">Hostel & Transportation <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-courses" class="tab-list">
+                                            <span class="content-title">Courses <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-fees-structure" class="tab-list">
+                                            <span class="content-title">Fees Structure <i class="fs" data-feather="arrow-right"></i> </span>
+                                        </label>
+                                    </li>
+                                </ul>                                
+                            </div>
+                            <div class="content-list content-second">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-Examnation" class="tab-list">
+                                            <span class="content-title">Examnation <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Time-Table" class="tab-list">
+                                            <span class="content-title">Time-Table <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Syllabus" class="tab-list">
+                                            <span class="content-title">Syllabus <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Result" class="tab-list">
+                                            <span class="content-title">Result <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-E-Lecture" class="tab-list">
+                                            <span class="content-title">E-Lecture <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Mentor" class="tab-list">
+                                            <span class="content-title">Mentor Mentee <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Proctorial" class="tab-list">
+                                            <span class="content-title">Proctorial Board <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Certificates" class="tab-list">
+                                            <span class="content-title">Apply Online for Certificates <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Holiday List" class="tab-list">
+                                            <span class="content-title">Holiday List <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Grievance" class="tab-list">
+                                            <span class="content-title">Online Student Grievance <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Guidelines" class="tab-list">
+                                            <span class="content-title">Covid Guidelines <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-Guidelines" class="tab-list">
+                                            <span class="content-title">Guidelines for UP Scolership <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-list content-third">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-training-placement" class="tab-list">
+                                            <span class="content-title">Training & Placement Cell <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-corporate-relation" class="tab-list">
+                                            <span class="content-title">Center for Corporate Relation <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-placement-process" class="tab-list">
+                                            <span class="content-title">Placement Process <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-list-of-recruiters" class="tab-list">
+                                            <span class="content-title">List of Recruiters <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-mba-placement-reports" class="tab-list">
+                                            <span class="content-title">MBA Placement Reports <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-mba-training-reports" class="tab-list">
+                                            <span class="content-title">MBA Training Reports <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                </ul>                                
+                            </div>
+                            <div class="content-list content-fourth">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-computer" class="tab-list">
+                                            <span class="content-title">Computer <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-management" class="tab-list">
+                                            <span class="content-title">Management <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-list content-five">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-computer" class="tab-list">
+                                            <span class="content-title">Computer Lab <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-library" class="tab-list">
+                                            <span class="content-title">Library <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-seminar" class="tab-list">
+                                            <span class="content-title">Seminar Hall <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-health" class="tab-list">
+                                            <span class="content-title">Health Care <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-cafeteria" class="tab-list">
+                                            <span class="content-title">Cafeteria <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-hostel" class="tab-list">
+                                            <span class="content-title">Hostel <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-sports" class="tab-list">
+                                            <span class="content-title">Sports <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-guest-house" class="tab-list">
+                                            <span class="content-title">Guest House <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-post-office" class="tab-list">
+                                            <span class="content-title">Bank and Post Office <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-list content-six">
+                                <ul class="content-ul flex-col">
+                                    <li class="content-nav-list">
+                                        <label for="tab-inspiration" class="tab-list">
+                                            <span class="content-title">Our Inspiration <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-vision-&-mission" class="tab-list">
+                                            <span class="content-title">Vision & Mission <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-pedagogy" class="tab-list">
+                                            <span class="content-title">Pedagogy <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-varanasi" class="tab-list">
+                                            <span class="content-title">Varanasi City <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                    <li class="content-nav-list">
+                                        <label for="tab-about" class="tab-list">
+                                            <span class="content-title">About FAQs <i class="fs" data-feather="arrow-right"></i></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section>
+                </header>
+                <footer class="navigation-footer">
+                    <div class="footer-inner flex-row">
+                        <ul class="footer-ul flex-row">
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Contact us</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Enquiry</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Academic Calender</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Alumni</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">IQAC</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Student Login</a></span>
+                            </li>
+                            <li class="footer-list">
+                                <span class="footer-text"><a href="http://">Teacher Login</a></span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </footer>
+            </div>
+        </nav>
+
+        <section class="sub-header main-container">
+            <p class="slogan">Find path for your future.</p>
+        </section>
+
+        <section class="hero-section main-container">
+            <button id="prevBtn">&lt;</button>
+            <div class="hero-section-inner">
+                <div class="hero-image first">
+                    <img src="./assets/img/hero-section/mainImage.jpg" loading="lazy" alt="Main Hero Image">
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/img/hero-section/3.jpg" loading="lazy" alt="Hero Image 1">
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/img/hero-section/6.jpg" loading="lazy" alt="Hero Image 2">
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/img/hero-section/12.jpg" loading="lazy" alt="Hero Image 3">
+                </div>
+            </div>
+            <button id="nextBtn">&gt;</button>
+        </section>
+    </header>
+
+    <main>
+        <section class="home-section">
+            <div class="home-section-inner inner-container flex-row">
+                <div class="main-section flex-row">
+                    <section class="section-title">
+                        <h2 id="animatedText">Welcome</h2>
+                        <p class="paragrapgh margin-top-3">Rajarshi School of Management & Technology, a premier institute, offers cutting-edge
+                            undergraduate and postgraduate programs in Computer Application and Management.
+                            Positioned in Varanasi, the City of Light, RSMT blends modern management with the timeless
+                            wisdom of ancient Indian education, ensuring holistic development beyond measurable goals for
+                            both students and faculty.
+                        </p>
+                        <button class="btn section-btn"><span>Learn More</span></button>
+                    </section>
+                    <section class="cource-search-section">
+                        <div class="cource-search-inner flex-col">
+                            <span class="icon"><i class="fs" data-feather="book-open"></i></span>
+                            <p class="course-content">find your course</p>
+                            <fieldset class="cource-search flex-col">
+                                <label for="searchInput" class="sr-only" style="display: none;">Search Courses</label>
+                                <input type="search" id="searchInput" name="searchInput" placeholder="Search Courses" aria-label="Search Courses">
+                                <label for="keywordInput" class="sr-only" style="display: none;">keyword</label>
+                                <input type="text" id="keywordInput" name="keywordInput" placeholder="Location" aria-label="Location">
+                            </fieldset>
+                            <div class="content-bottom flex-col">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>Lorem ipsum dolor sit.</p>
+                            </div>
+                        </div>
+                    </section>   
+                </div>
+            </div>
+            <div class="section-space"></div>
+                <div class="parallax-container"></div>
+            
+        </section>
+        <section class="another"></section>
+    </main>
+</div>
+
+    <!-- Defer non-critical scripts at the end of the body -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js" integrity="sha512-+LXqbM6YLduaaxq6kNcjMsQgZQUTdZp7FTaArWYFt1nxyFKlQSMdIF/WQ/VgsReERwRD8w/9H9cahFx25UDd+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/feather-icons"></script>
+    <script defer src="./script/script.js"></script>
+
+</body>
+
+</html>

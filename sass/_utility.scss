@@ -1,0 +1,132 @@
+@mixin flex($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+  }
+
+  @mixin background-image($size){
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @mixin position( $top, $right, $bottom, $left){
+    top: $top;
+    right: $right;
+    $bottom: $bottom;
+    $left: $left;
+  }
+
+  @mixin line($color, $border-radius) {
+    width: 25px; // Set equal width for all lines
+    height: 3px; // Set equal height for all lines
+    margin-top: 0;
+    margin-left: 0;
+    border-radius: $border-radius;
+    background-color: $color;
+  }
+  
+  @mixin center() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin center-left() {
+    top: 50%;
+    left: 1%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin center-right() {
+    top: 50%;
+    right: 1%;
+    transform: translate(-50%, -50%);
+  }
+
+  @mixin pointer () {
+    pointer-events: none;
+  }
+  
+  .active {
+    color: $accent-400;
+  }
+  
+  .icon {
+    color: $accent-100;
+    vertical-align: middle;
+  }
+  
+  button {
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .flex-row {
+    @include flex(row);
+
+  }
+  
+  .flex-col {
+    @include flex(column);
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  .none {
+    display: none;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .center {
+    @include center();
+  }
+  
+  .fs{
+    // background-color: red;
+    display: inline-block;
+    width: fit-content;
+    margin-left: .2rem;
+    font-size: .8rem;
+    vertical-align: middle;
+}
+
+
+span{
+  vertical-align: middle;
+}
+
+.margin-top-1 {
+  margin-top: 1rem;
+}
+
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+.margin-top-3 {
+  margin-top: 3rem;
+}
+
+.margin-top-4 {
+  margin-top: 4rem;
+}
+  
+ 
+  
+
+  

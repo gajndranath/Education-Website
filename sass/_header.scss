@@ -1,0 +1,380 @@
+header{
+    position: relative;
+    .inner-header{
+        height: 80px;
+        padding: 4rem 0 2rem .5rem;
+        // background-color: blue;
+        justify-content: space-between;
+        gap: 1rem;
+        .brand{
+            padding: .5rem;
+            .aspect-ratio-container {
+                aspect-ratio: 1 / 1; 
+                max-width: 45px; 
+
+                .logo {
+                    width: 100%; 
+                    height: 100%; 
+                  }
+              }
+              
+            .brand-name {
+                cursor: default;
+                .brand-heading{
+                    // background-color: #ff914d;
+                    font-size: 2rem;
+                    line-height: 0.8;
+                    font-weight: 600;
+                    padding: .2rem .4rem;
+                    letter-spacing: 2px;
+                    transform: scaleY(1.4); 
+                    &::after {
+                        content: ''; 
+                        display: block;
+                        width: 120%;
+                        height: 2px; 
+                        background-color: wheat; 
+                        position: absolute;
+                        bottom: -10px;
+                        left: 6px;
+                        border-radius: .5rem;
+                    }
+                }
+            }
+        }
+        .navigation {
+            // background-color: brown;
+            padding: .4rem 0;
+            cursor: pointer;
+            .menu-icon {
+                padding: 0 .2rem;
+                // background-color: cadetblue;
+                cursor: pointer;
+                width: 50px;
+                height: 20px;
+                justify-content: space-between;
+            
+                .bar {
+                    height: 4px;
+                    width: 26px;
+                    border-radius: 2px;
+                    background-color: wheat;
+                    transition: all 200ms ease-in;
+                }
+
+                &.open {
+                    .bar:nth-child(2) {
+                    margin-right: 40px;
+                    transition-delay: 200ms;
+                    
+                    }
+                }
+
+                .bar:nth-child(1) {
+                    width: 80%;
+                    margin-right: 10px;
+                }
+
+                .bar:nth-child(2) {
+                    background: linear-gradient(90deg, #ff3131, #ff914d);
+                    width: 80%;
+                    margin-left: 10px;
+                }
+
+                .bar:nth-child(3) {
+                    width: 80%;
+                    margin-right: 10px;
+                }
+            }
+
+            .menu-btn{
+                // background-color: chartreuse;
+                line-height: 1.8;
+                color: wheat;
+                text-transform: uppercase;
+                padding: .1rem .4rem;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .sub-header{
+        .slogan{
+            padding: 1rem 4rem;
+            // background-color: #ff3131;
+            font-weight: 400;
+        }
+    }
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black; /* Add your desired background color */
+    background-image: url(https://cdn.monstercat.com/background-tile.webp);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    opacity: 0; /* Ensure it's visually hidden */
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000; /* Adjust as needed */
+  
+    .navigation-menu-inner {
+        .navigation-header {
+            position: relative;
+            // background-color: #ff3131;
+  
+            .sub-heading {
+            padding: 1rem 0;
+            border-bottom: 1px solid white;
+            // background-color: #ff914d;
+            text-align: center;
+            font-size: 2.6rem;
+            letter-spacing: 4px;
+            position: relative;
+        
+                /* &::after {
+                    content: '';
+                    display: block;
+                    width: 50%;
+                    height: 2px;
+                    background-color: wheat;
+                    position: absolute;
+                    bottom: 0%;
+                    left: 25%;
+                    border-radius: 0.5rem;
+                } */
+            }
+
+            .navigation-btn {
+                position: absolute;
+                padding: .3rem;
+                right: 4%;
+                // background-color: aqua;
+                top: 5%;
+        
+                .close-btn {
+                // background-color: green;
+                text-transform: uppercase;
+                padding: .2rem;
+                line-height: 1.2;
+                font-weight: bold;
+                font-size: .8rem;
+                color: white;
+
+                    span{
+                        margin-top: .1rem;
+                    }
+                }    
+            }
+
+            /* 
+            all main here work here
+            */
+
+            .navigation-list{
+                // background-color: goldenrod;
+                width: 100%;
+                gap: 1rem;
+                flex-wrap: wrap;
+                padding: 1rem;
+                // height: calc(100vh - 80px - 72px);
+
+                .menu-nav{
+                    flex: 1;
+                    color: azure;
+                    padding: 1rem;
+                    position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 2px; 
+                            background: linear-gradient(to bottom, transparent, white, transparent);
+                        }
+                    .menu-nav-ul{
+                        align-items: flex-start;
+                        gap: 1rem;
+                        // background-color: blue;
+                        .menu-nav-list{
+                            width: 100%;
+                            // background-color: brown;
+                            .tab-title {
+                                width: 100%;
+                                position: relative;
+                                overflow: hidden;
+                                padding: .3rem 0;
+                                color: white;
+                                font-size: 3rem;
+                                font-weight: 600;
+                                transition: color 0.3s ease-in;
+
+                                &::before {
+                                  content: "";
+                                  position: absolute;
+                                  left: 0;
+                                  bottom: 0;
+                                  width: 100%;
+                                  height: .1rem;
+                                  background: linear-gradient(90deg, #ff3131, #ff914d);
+                                  transform: scaleX(0);
+                                  transform-origin: 0 100%;
+                                  transition: transform 0.3s ease-in-out;
+                                }
+                              
+                                &:hover::before {
+                                  transform: scaleX(1);
+                                }
+                              
+                                &.current::before {
+                                  transform: scaleX(1);
+                                  background: linear-gradient(90deg, #ff3131, #ff914d); /* Apply gradient only to the clicked tab */
+                                }
+                              }
+                              
+
+                            .tab-title.current {
+                                color: white; /* Color for the current tab */
+                              }
+                        }
+    
+                    }
+                }
+
+                .main-menu-content{
+                    flex: 3;
+                    padding: .5rem;
+                    height: 65vh;
+                    flex-wrap: wrap;
+                    overflow: hidden;
+                    margin-left: 1.5rem;
+                    // background-color: yellow;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    .content-list{
+                        width: 100%;
+                        padding: .5rem;
+                        height: 100vh;
+                        // background-color: #ff3131;
+
+                        .content-ul{ 
+                            width: 80%;
+                            height: 60vh;
+                            // background-color: aquamarine;
+                            gap: 2rem;
+                            justify-content: flex-start;
+                            flex-wrap: wrap;
+                            align-items: flex-start;
+
+                            .content-nav-list{
+                                width: 50%;
+                                // background-color: blue;
+
+                                @keyframes moveRightToLeft {
+                                    0% {
+                                      transform: translateX(0px); // Starting position
+                                    }
+                                    50% {
+                                      transform: translateX(5px); // Midway point
+                                    }
+                                    100% {
+                                      transform: translateX(0px); // Ending position
+                                    }
+                                  }
+
+                                .content-title{
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    color: white;
+                                    width: 100%;
+                                    // background-color: red;
+                                    transition: color 0.3s ease-in;
+                                        &:hover{
+                                            transform: translate(1rem ,50%);
+                                            .fs {
+                                                animation: moveRightToLeft 0.6s ease-in-out infinite alternate-reverse;
+                                                color: white;
+                                              }
+                                        }
+                                        .fs{
+                                            width: .7rem;
+                                            color: #8996a0;
+                                            transition: transform 0.8s ease-in-out;
+                                        }
+                                }
+                            }
+                        }
+                    }
+
+                
+                    .content-first, .content-second, .content-third, .content-fourth, .content-five, .content-six {
+                        display: none;
+                    }
+
+                }
+            }
+        }
+
+            /* 
+            foooter are diffrent
+            */
+        .footer-inner{
+            // background-color: #ff3131;
+            height: 110px;
+            border-top: 1px solid white;
+            padding: 1rem;
+            justify-content: flex-end;
+            .footer-ul{
+                flex-basis: 77%;
+                // background-color: red;
+                gap: 1rem;
+                padding: .5rem;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+
+                .footer-list{
+                    // flex: 1 0 auto;
+                    text-align: right;
+                    padding: 0 .5rem;
+                    // background-color: #8996a0;
+
+                    .footer-text{
+                        position: relative;
+                        overflow: hidden;
+                        transition: color 0.3s ease-in;
+                        a{  
+                            font-size: 1.6rem;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: -55%;
+                            width: 100%;
+                            height: .1rem;
+                            background: linear-gradient(90deg, #ff3131, #ff914d);
+                            transform: scaleX(0);
+                            transform-origin: 0 100%;
+                            transition: transform 0.3s ease-in-out;
+                          }
+                        &:hover::before{
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+  
