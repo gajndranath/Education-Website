@@ -122,7 +122,8 @@ header{
     width: 100%;
     height: 100vh;
     background-color: black; /* Add your desired background color */
-    background-image: url(../../assets/img/bg/background-tile.webp);
+    background-image: url(/Education-Website/assets/img/bg/background-tile.webp);
+    // background-image: url(../../assets/img/bg/background-tile.webp);
     background-repeat: repeat;
     background-attachment: scroll;
     overflow-y: auto;
