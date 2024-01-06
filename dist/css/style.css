@@ -736,7 +736,7 @@ header .sub-header .slogan {
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: url(/assets/img/hero-section/bg.jpg);
+  background: url(../assets/img/hero-section/bg.jpg);
   background-size: cover;
   -o-border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
      border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
