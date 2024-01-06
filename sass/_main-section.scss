@@ -112,8 +112,9 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: 2;
+    z-index: 2; 
     background-image: url(/Education-Website/assets/img/hero-section/bg.jpg);
+    // background-image: url(../../assets/img/hero-section/bg.jpg);
     background-size: cover;
     border-image: fill 0 linear-gradient(#0003, #000);
     background-repeat: no-repeat;

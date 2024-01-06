@@ -1,5 +1,37 @@
 feather.replace();
 
+// Add this to your existing script or create a new JavaScript file
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Create a timeline for the loading animation
+    const loadingTimeline = gsap.timeline({ repeat: -1, paused: true });
+    
+    // Add animation properties (you can customize these)
+    loadingTimeline.to('#loading-animation', { duration: 1, opacity: 1, ease: 'power2.inOut' });
+
+    // Show loading animation
+    function showLoadingAnimation() {
+        loadingTimeline.play();
+        document.getElementById('loading-overlay').style.display = 'flex';
+    }
+
+    // Simulate loading delay (you can remove this in production)
+    setTimeout(function () {
+        hideLoadingAnimation();
+    }, 2000); // Adjust the delay time as needed
+
+    // Hide loading animation
+    function hideLoadingAnimation() {
+        loadingTimeline.pause();
+        document.getElementById('loading-overlay').style.display = 'none';
+    }
+
+    // Trigger loading animation when the page is loaded
+    showLoadingAnimation();
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const toggleElement = document.getElementById('toggle');

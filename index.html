@@ -26,12 +26,12 @@
 
     <!-- Stylesheets -->
     <link rel="preload" href="./dist/css/style.css" as="style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
     <link rel="stylesheet" href="./dist/css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
 
     <!-- Manifest link -->
-    <link rel="manifest" href="./manifest.json"> 
+    <link rel="manifest" href="/mainfest.json"> 
 
     <!-- Service Worker Registration -->
     <script>
@@ -48,12 +48,16 @@
 </head>
 
 <body>
-<div data-scroll-container class="smoth-scroll">
+<!-- Loading Animation Container -->
+<!-- <div id="loading-overlay">
+    <div id="loading-animation"></div>
+</div> -->
+<div data-scroll-container class="smoth-scroll hidden" id="content">
     <header role="banner">
         <section class="inner-header main-container flex-row mobile-inner-header">
             <div class="brand flex-row">
                 <div class="aspect-ratio-container">
-                    <img class="logo" src="./assets/img/logo/rsmtLogo.png"
+                    <img class="logo" src="./assets/img/logo/rsmtLogo.svg"
                         alt="Rajarsh School of Technology and Management Logo">
                 </div>
                 <div class="brand-name flex-col">
@@ -392,16 +396,16 @@
             <button id="prevBtn">&lt;</button>
             <div class="hero-section-inner">
                 <div class="hero-image first">
-                    <img src="./assets/img/hero-section/mainImage.jpg" loading="lazy" alt="Main Hero Image">
+                    <img src="./assets/img/hero-section/mainImage.webp" loading="lazy" alt="Main Hero Image">
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/img/hero-section/3.jpg" loading="lazy" alt="Hero Image 1">
+                    <img src="./assets/img/hero-section/3.webp" loading="lazy" alt="Hero Image 1">
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/img/hero-section/6.jpg" loading="lazy" alt="Hero Image 2">
+                    <img src="./assets/img/hero-section/6.webp" loading="lazy" alt="Hero Image 2">
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/img/hero-section/12.jpg" loading="lazy" alt="Hero Image 3">
+                    <img src="./assets/img/hero-section/12.webp" loading="lazy" alt="Hero Image 3">
                 </div>
             </div>
             <button id="nextBtn">&gt;</button>
