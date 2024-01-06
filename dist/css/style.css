@@ -743,7 +743,7 @@ header .sub-header .slogan {
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: url(../../assets/img/hero-section/bg.jpg);
+  background-image: url(/Education-Website/assets/img/hero-section/bg.jpg);
   background-size: cover;
   -o-border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
      border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
@@ -829,10 +829,14 @@ header .sub-header .slogan {
 @media only screen and (max-width: 375px) {
   .hero-section {
     height: 25vh;
+    padding: 0 !important;
     background-color: cyan;
   }
   .hero-section .hero-image img {
-    aspect-ratio: 21/9 !important;
+    aspect-ratio: 9/5 !important;
+  }
+  .hero-section #prevBtn, .hero-section #nextBtn {
+    display: none !important;
   }
 }
 /* Mobile Phones */

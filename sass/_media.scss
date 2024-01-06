@@ -84,11 +84,16 @@
   @media only screen and (max-width: 375px) {
     .hero-section{
         height: 25vh;
+        padding: 0 !important;
         background-color: cyan;
         .hero-image{
             img{
-                aspect-ratio: 21/9 !important;
+                aspect-ratio: 9/5 !important;
             }
+        }
+
+        #prevBtn, #nextBtn{
+            display: none !important;
         }
     }
   }
