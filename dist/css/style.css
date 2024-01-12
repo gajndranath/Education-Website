@@ -895,7 +895,7 @@ header .sub-header .slogan {
   font-style: normal;
 }
 .branding .inner-branding .grid-branding .bg {
-  background-image: url(../../assets/img/bg/background-tile.webp);
+  background-image: url(/Education-Website/assets/img/bg/background-tile.webp);
 }
 .branding .inner-branding .grid-branding .grid-child-2 {
   grid-row-start: span 2;
