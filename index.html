@@ -53,7 +53,25 @@
     <div id="loading-animation"></div>
 </div> -->
 <div data-scroll-container class="smoth-scroll hidden" id="content">
+    <!-- Header --->
     <header role="banner">
+        <section id="top-header">
+            <div class="inner-top-header inner-padding flex-row">
+                <details>
+                    <summary>Portal</summary>
+                    <div>
+                        <a href="#">Student</a>
+                        <a href="#">Teacher</a>
+                    </div>
+                </details>
+                <ul class="top-header-nav flex-row">
+                    <li class="top-header-list"><a href="#"> link 1</a></li>
+                    <li class="top-header-list"><a href="#"> link 1</a></li>
+                    <li class="top-header-list"><a href="#"> link 1</a></li>
+                    <li class="top-header-list"><a href="#"> link 1</a></li>
+                </ul>
+            </div>
+        </section>
         <section class="inner-header main-container flex-row mobile-inner-header">
             <div class="brand flex-row">
                 <div class="aspect-ratio-container">
@@ -77,8 +95,11 @@
             </nav>
         </section>
 
+        <!-- header nav menu--->
         <nav class="navigation-menu" role="navigation">
             <div class="navigation-menu-inner">
+
+                <!-- header nav --->
                 <header class="navigation-header">
                     <div class="brand-name">
                         <h2 class="sub-heading">RSMT</h2>
@@ -133,6 +154,7 @@
                             </ul>
                         </div>
 
+                        <!-- header menu content--->
                         <div class="main-menu-content flex-col">
                             <div class="content-list content-first">
                                 <ul class="content-ul flex-col">
@@ -357,6 +379,9 @@
 
                     </section>
                 </header>
+                <!-- header nav content ends here--->
+
+                <!-- header menu footer--->
                 <footer class="navigation-footer">
                     <div class="footer-inner flex-row">
                         <ul class="footer-ul flex-row">
@@ -387,11 +412,14 @@
                 </footer>
             </div>
         </nav>
+        <!-- header nav ends here--->
 
+        <!-- sub header--->
         <section class="sub-header main-container">
             <p class="slogan">Find path for your future.</p>
         </section>
 
+        <!-- hero section --->
         <section class="hero-section main-container">
             <button id="prevBtn">&lt;</button>
             <div class="hero-section-inner">
@@ -411,21 +439,23 @@
             <button id="nextBtn">&gt;</button>
         </section>
     </header>
+    <!-- main header ends here--->
 
     <main>
+        <!-- main home section--->
         <section class="home-section">
-            <div class="home-section-inner inner-container flex-row">
+            <div class="home-section-inner inner-container flex-row" >
                 <div class="main-section flex-row">
-                    <section class="section-title">
+                    <article class="section-title">
                         <h2 id="animatedText">Welcome</h2>
-                        <p class="paragrapgh margin-top-3">Rajarshi School of Management & Technology, a premier institute, offers cutting-edge
+                        <p class="paragrapgh">Rajarshi School of Management & Technology, a premier institute, offers cutting-edge
                             undergraduate and postgraduate programs in Computer Application and Management.
                             Positioned in Varanasi, the City of Light, RSMT blends modern management with the timeless
                             wisdom of ancient Indian education, ensuring holistic development beyond measurable goals for
                             both students and faculty.
                         </p>
                         <button class="btn section-btn"><span>Learn More</span></button>
-                    </section>
+                    </article>
                     <section class="cource-search-section">
                         <div class="cource-search-inner flex-col">
                             <span class="icon"><i class="fs" data-feather="book-open"></i></span>
@@ -445,10 +475,44 @@
                 </div>
             </div>
             <div class="section-space"></div>
-                <div class="parallax-container"></div>
-            
+                <div class="parallax-container"></div>   
         </section>
-        <section class="another"></section>
+        <!-- main section ends here--->
+
+        <!-- Addmision section--->
+        <section class="branding">
+            <div class="inner-branding inner-container">
+                <article class="grid-branding">
+                    <div class="grid-child-1 bg">
+                        <div class="brand-content flex-col">
+                            <header class="top-content">
+                                <h1>Highly Qualified Faculty</h1>
+                                <p>Internal Quality Assurance Cell</p>
+                            </header>
+                            <section class="mid-content flex-col">
+                                <h2 class="left-text">Among 50</h2>
+                                <h1 class="mid-text">B-School in</h1>
+                                <h2 class="right-text">North India</h2>
+                            </section>
+                        </div>
+                    </div>
+                    <aside class="grid-child-2">
+                        <div class="image">
+                            <img src="/assets/img/hero-section/eg.jpg" alt="Hero Image">
+                        </div>
+                    </aside>
+                    <div class="grid-child-1 flex-col">
+                        <footer class="bottom-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Admissions are open.</p>
+                            <div class="btn brand-btn">
+                                <button>Apply Now</button>
+                                <button>Enquiry</button>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </section>        
     </main>
 </div>
 

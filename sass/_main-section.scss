@@ -10,14 +10,15 @@
 
         .main-section{
             gap: 1rem;
+            // background-color: blue;
             // position: relative;
             // z-index: 3;
             flex-wrap: wrap;
             .section-title{
-                flex-basis: 50%;
                 // background-color: red;
-                flex-basis: 58%;
-                padding: 0 20px;
+                // flex-basis: 58%;
+                flex: 4 0 0;
+                padding: 0 1.2rem;
                 text-align: left;
                 h2 {
                     position: relative;
@@ -34,12 +35,13 @@
                 }
 
                 .paragrapgh{
+                    margin-top: 3rem;
                     margin-bottom: 1rem;
                 }
 
                 .section-btn{
                     background: linear-gradient(90deg, #ff3131, #ff914d);
-                    padding: .8rem 2rem;
+                    padding: 1rem 1.6rem;
                     border-radius: 1rem;
 
                     span{
@@ -55,7 +57,8 @@
             .cource-search-section {
                 background: linear-gradient(90deg, #ff3131, #ff914d);
                 // height: 50vh;
-                flex-basis: 32%;
+                flex: 2 0 0;
+                // flex-basis: 32%;
                 text-align: center;
                 position: relative;
                 z-index: 3; 
@@ -98,35 +101,34 @@
             }
         }
     }
-}
-.section-space{
-    width: 100%;
-    height: 32vh;
+    .section-space{
+        width: 100%;
+        height: 32vh;
+        // background-color: red;
+    }
+    
+    .parallax-container {
+        display: grid;
+        place-content: center;
+        padding: 0 1rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 2; 
+        background-image: url(/Education-Website/assets/img/hero-section/bg.jpg);
+        // background-image: url(../../assets/img/hero-section/bg.jpg);
+        background-size: cover;
+        border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-position: 65%;
+        height: 40vh;
+    }
 }
 
-.parallax-container {
-    display: grid;
-    place-content: center;
-    padding: 0 1rem;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 2; 
-    background-image: url(/Education-Website/assets/img/hero-section/bg.jpg);
-    // background-image: url(../../assets/img/hero-section/bg.jpg);
-    background-size: cover;
-    border-image: fill 0 linear-gradient(#0003, #000);
-    background-repeat: no-repeat;
-    object-fit: cover;
-    height: 40vh;
-}
 
 
-.another{
-    height: 100vh;
-    background: linear-gradient(90deg, #ff3131, #ff914d);
-}
 
 
 

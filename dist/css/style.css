@@ -316,6 +316,68 @@ span {
 
 header {
   position: relative;
+  /* Define the slide-in animation */
+}
+header #top-header {
+  display: none;
+}
+header .inner-top-header {
+  background: linear-gradient(90deg, #ff3131, #ff914d);
+  justify-content: flex-end;
+  gap: 0.5rem;
+  text-align: center;
+  overflow: visible;
+}
+header .inner-top-header details {
+  background-color: blue;
+  display: inline-block;
+  position: relative;
+}
+header .inner-top-header summary {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+header .inner-top-header details > div {
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+header .inner-top-header details[open] > div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out; /* Add a slide-in animation */
+}
+header .inner-top-header details > div a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+header .inner-top-header details > div a:hover {
+  background-color: #f0f0f0;
+}
+header .inner-top-header .top-header-nav {
+  align-items: center;
+  gap: 0.5rem;
+}
+header .inner-top-header .top-header-nav .top-header-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 header .inner-header {
   height: 80px;
@@ -355,8 +417,8 @@ header .inner-header .brand .brand-name .brand-heading::after {
   height: 2px;
   background-color: wheat;
   position: absolute;
-  bottom: -10px;
-  left: 6px;
+  bottom: -6px;
+  left: 5px;
   border-radius: 0.5rem;
 }
 header .inner-header .brand .brand-name .brand-heading-mobile {
@@ -398,7 +460,7 @@ header .inner-header .navigation .menu-icon .bar:nth-child(3) {
   margin-right: 10px;
 }
 header .inner-header .navigation .menu-btn {
-  line-height: 1.8;
+  line-height: 1.6;
   color: wheat;
   text-transform: uppercase;
   padding: 0.1rem 0.4rem;
@@ -406,7 +468,7 @@ header .inner-header .navigation .menu-btn {
   font-size: 1rem;
 }
 header .sub-header .slogan {
-  padding: 1rem 4rem;
+  padding: 0.2rem 4.2rem;
   font-weight: 400;
 }
 
@@ -689,9 +751,8 @@ header .sub-header .slogan {
   flex-wrap: wrap;
 }
 .home-section .home-section-inner .main-section .section-title {
-  flex-basis: 50%;
-  flex-basis: 58%;
-  padding: 0 20px;
+  flex: 4 0 0;
+  padding: 0 1.2rem;
   text-align: left;
 }
 .home-section .home-section-inner .main-section .section-title h2 {
@@ -708,11 +769,12 @@ header .sub-header .slogan {
   background: linear-gradient(90deg, #ff3131, #ff914d);
 }
 .home-section .home-section-inner .main-section .section-title .paragrapgh {
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 .home-section .home-section-inner .main-section .section-title .section-btn {
   background: linear-gradient(90deg, #ff3131, #ff914d);
-  padding: 0.8rem 2rem;
+  padding: 1rem 1.6rem;
   border-radius: 1rem;
 }
 .home-section .home-section-inner .main-section .section-title .section-btn span {
@@ -723,7 +785,7 @@ header .sub-header .slogan {
 }
 .home-section .home-section-inner .main-section .cource-search-section {
   background: linear-gradient(90deg, #ff3131, #ff914d);
-  flex-basis: 32%;
+  flex: 2 0 0;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -759,13 +821,11 @@ header .sub-header .slogan {
   margin-top: 1rem;
   margin-bottom: 6rem;
 }
-
-.section-space {
+.home-section .section-space {
   width: 100%;
   height: 32vh;
 }
-
-.parallax-container {
+.home-section .parallax-container {
   display: grid;
   place-content: center;
   padding: 0 1rem;
@@ -776,17 +836,78 @@ header .sub-header .slogan {
   z-index: 2;
   background-image: url(/Education-Website/assets/img/hero-section/bg.jpg);
   background-size: cover;
-  -o-border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
-     border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
+  -o-border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+     border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
   background-repeat: no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
+  background-position: 65%;
   height: 40vh;
 }
 
-.another {
-  height: 100vh;
+.branding .inner-branding {
+  padding-right: 1.5rem;
   background: linear-gradient(90deg, #ff3131, #ff914d);
+}
+.branding .inner-branding .grid-branding {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content {
+  padding-left: 1em;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .top-content {
+  width: 100%;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .top-content p {
+  font-size: 0.8rem;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content {
+  width: 100%;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content .left-text, .branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content .right-text {
+  width: 100%;
+  font-size: 2.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content .left-text {
+  text-align: left;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content .mid-text {
+  width: 100%;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+  line-height: 0.9;
+  transform: scaleY(1.3);
+  text-align: center;
+}
+.branding .inner-branding .grid-branding .grid-child-1 .brand-content .mid-content .right-text {
+  padding-right: 1em;
+  text-align: right;
+  font-style: normal;
+}
+.branding .inner-branding .grid-branding .bg {
+  background-image: url(../../assets/img/bg/background-tile.webp);
+}
+.branding .inner-branding .grid-branding .grid-child-2 {
+  grid-row-start: span 2;
+}
+.branding .inner-branding .grid-branding .grid-child-2 .image img {
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  overflow: hidden;
+  -o-object-position: top;
+     object-position: top;
 }
 
 /* Larger Desktops */
@@ -818,7 +939,7 @@ header .sub-header .slogan {
   .brand-name .brand-heading-mobile::after {
     content: "";
     display: block;
-    width: 250% !important;
+    width: 200% !important;
     height: 2px;
     background-color: wheat;
     position: absolute;
@@ -857,6 +978,25 @@ header .sub-header .slogan {
 }
 /* iPhone 6/7/8 */
 @media only screen and (max-width: 375px) {
+  #top-header {
+    display: block !important;
+  }
+  .inner-header {
+    padding: 2rem 0 2rem 0.5rem !important;
+  }
+  .brand-heading-mobile {
+    font-size: 1.8rem !important;
+  }
+  .brand-heading-mobile::after {
+    height: 1.5px !important;
+    bottom: -5px !important;
+  }
+  .slogan {
+    padding: 0 4.2rem !important;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
   .hero-section {
     height: 25vh;
     padding: 0 !important;
@@ -869,6 +1009,44 @@ header .sub-header .slogan {
   }
   .hero-section #prevBtn, .hero-section #nextBtn {
     display: none !important;
+  }
+  .home-section-inner {
+    flex-direction: column !important;
+  }
+  .home-section-inner .main-section {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+  .home-section-inner .main-section .section-title {
+    padding: 1rem 1.6rem !important;
+    margin-block: 1rem;
+  }
+  .home-section-inner .main-section .section-title h2 {
+    font-size: 2rem !important;
+  }
+  .home-section-inner .main-section .section-title h2::before {
+    width: 16% !important;
+  }
+  .home-section-inner .main-section .section-title .paragrapgh {
+    margin-top: 1rem !important;
+  }
+  .home-section-inner .main-section .section-title .section-btn {
+    padding: 0.6rem 1rem !important;
+  }
+  .home-section-inner .main-section .section-title .section-btn span {
+    font-size: 0.6rem !important;
+  }
+  .home-section-inner .main-section .cource-search-inner {
+    padding: 1.6rem !important;
+  }
+  .home-section-inner .main-section .cource-search-inner .icon {
+    margin-top: 1rem !important;
+  }
+  .home-section-inner .main-section .cource-search-inner .course-content {
+    margin-bottom: 0px !important;
+  }
+  .home-section-inner .main-section .cource-search-inner .content-bottom {
+    margin-bottom: 2rem !important;
   }
 }
 /* Mobile Phones */

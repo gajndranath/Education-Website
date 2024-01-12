@@ -1,5 +1,78 @@
 header{
     position: relative;
+    #top-header {
+        display: none;
+    }
+
+    .inner-top-header {
+        background: linear-gradient(90deg, #ff3131, #ff914d);
+        justify-content: flex-end;
+        gap: .5rem;
+        text-align: center;
+        overflow: visible; 
+        details {
+            background-color: blue;
+            display: inline-block;
+            position: relative;
+        }
+        summary {
+            padding: .3rem .9rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+
+        details > div {
+            display: none;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        details[open] > div {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 0.3s ease-out; /* Add a slide-in animation */
+        }
+
+        details > div a {   
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        details > div a:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .top-header-nav {
+            align-items: center;
+            gap: 0.5rem;
+            // background-color: green;
+
+            .top-header-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    /* Define the slide-in animation */
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+
     .inner-header{
         height: 80px;
         padding: 4rem 0 2rem .5rem;
@@ -38,8 +111,8 @@ header{
                         height: 2px; 
                         background-color: wheat; 
                         position: absolute;
-                        bottom: -10px;
-                        left: 6px;
+                        bottom: -6px;
+                        left: 5px;
                         border-radius: .5rem;
                     }
                 }
@@ -96,7 +169,7 @@ header{
 
             .menu-btn{
                 // background-color: chartreuse;
-                line-height: 1.8;
+                line-height: 1.6;
                 color: wheat;
                 text-transform: uppercase;
                 padding: .1rem .4rem;
@@ -108,7 +181,7 @@ header{
 
     .sub-header{
         .slogan{
-            padding: 1rem 4rem;
+            padding: .2rem 4.2rem;
             // background-color: #ff3131;
             font-weight: 400;
         }
