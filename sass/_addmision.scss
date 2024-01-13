@@ -58,6 +58,35 @@
                         }
                     }
                 }
+
+                .bottom-content{
+                    padding-left: 1em;
+                    justify-content: space-evenly;
+                    align-items: stretch;
+                    height: 100%;
+
+                    p{
+                        color: black;
+                    }
+
+                    .brand-btn{
+                        // width: 100%;
+                        justify-content: flex-start;
+                        gap: 1.5rem;
+                        button{
+                            background-color: black;
+                            border: .15rem solid white;
+                            border-radius: 1rem;
+                            color: white;
+                            font-size: .6rem;
+                            padding: .5rem 1.8rem;
+                            &:nth-child(2){
+                                background-color: transparent;
+                                border-color: black;
+                            }
+                        }
+                    }
+                }
             }
             .bg {
                 // background-image: url(../../assets/img/bg/background-tile.webp);
@@ -67,12 +96,13 @@
             .grid-child-2 {
                 grid-row-start: span 2;
                 .image{
+                    height: 572px;
                     img{
                         aspect-ratio: 1;
                         object-fit: cover;
                         height: 100%;
-                        overflow: hidden;
                         object-position: top;
+                        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); 
                     }
                 }
             }

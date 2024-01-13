@@ -3,54 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Infinite Scroll News Portal</title>
+    <link rel="stylesheet" href="https://unpkg.com/feather-icons/dist/feather.min.css">
     <style>
-
-        a{
-            color: white;
-            text-decoration: none;
-        }
-        body{
-            background-color: black;
+        .news-portal {
+            overflow: hidden;
         }
 
-        .main-container {
-            width: 1260px;
-            background-color: red;
-            margin: auto;
-        }
-        .inner-header{
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-           justify-content: space-between;
+        .news-portal-inner {
+            position: relative;
         }
 
-        h1{
-            color: white;
+        .news {
+            overflow: hidden;
         }
 
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .arrow-top,
+        .arrow-bottom {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .arrow-top {
+            left: 10px;
+        }
+
+        .arrow-bottom {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
-  <header>
-    <div class="inner-header main-container flex">
-        <ul class="flex">
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-        </ul>
-        <h1>header</h1>
-        <ul class="flex">
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-        </ul>
+
+<section class="news-portal">
+    <div class="news-portal-inner inner-container flex-col">
+        <button class="arrow-top" onclick="scrollNews(-1)"><i data-feather="arrow-up-circle"></i> up</button>
+        <section class="news">
+            <ul class="news-list" id="newsList">
+                <!-- News items will be dynamically added here -->
+            </ul>
+        </section>
+        <button class="arrow-bottom" onclick="scrollNews(1)"><i data-feather="arrow-down-circle"></i> down</button>
     </div>
-  </header>
+</section>
+
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    // Initialize Feather icons
+    feather.replace();
+
+    // Sample news data
+    const newsData = [
+        { date: "2024-05-23", title: "Rsmt bca student", content: "Lorem ipsum dolor sit amet, consectetur adipiscin..." },
+        { date: "2024-05-15", title: "News update 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        { date: "2024-05-20", title: "News Title 3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        { date: "2024-05-25", title: "News Title 4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        { date: "2024-05-23", title: "Rsmt bca student", content: "Lorem ipsum dolor sit amet, consectetur adipiscin..." },
+        { date: "2024-05-15", title: "News update 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        { date: "2024-05-20", title: "News Title 3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        { date: "2024-05-25", title: "News Title 4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+        // Add more news items as needed
+    ];
+
+    // Function to create news item HTML
+    function createNewsItem({ date, title, content }) {
+        const listItem = document.createElement("li");
+        listItem.className = "news-item flex-row";
+        listItem.innerHTML = `
+            <time datetime="${date}">${date}</time>
+            <h3>${title}</h3>
+            <p>${content}</p>
+        `;
+        return listItem;
+    }
+
+    // Function to initialize news items
+    function initializeNews() {
+        const newsList = document.getElementById("newsList");
+        newsData.forEach(news => {
+            const listItem = createNewsItem(news);
+            newsList.appendChild(listItem.cloneNode(true));
+        });
+    }
+
+    // Initialize news items
+    initializeNews();
+
+    // Function to handle news scrolling
+    function scrollNews(direction) {
+        const newsList = document.getElementById("newsList");
+        const newsItems = document.querySelectorAll(".news-item");
+        const itemHeight = newsItems[0].offsetHeight;
+        const scrollAmount = direction * itemHeight;
+
+        // Clone and append news items for infinite scrolling
+        newsItems.forEach(newsItem => {
+            newsList.appendChild(newsItem.cloneNode(true));
+        });
+
+        // Animate scrolling
+        newsList.style.transition = "transform 0.3s ease-in-out";
+        newsList.style.transform = `translateY(${scrollAmount}px)`;
+
+        // Reset transform property after animation completes
+        setTimeout(() => {
+            newsList.style.transition = "none";
+            newsList.style.transform = "translateY(0)";
+            // Remove cloned items
+            newsItems.forEach((_, index) => {
+                if (index >= newsData.length) {
+                    newsList.removeChild(newsList.firstElementChild);
+                }
+            });
+        }, 300);
+    }
+</script>
 </body>
 </html>
-

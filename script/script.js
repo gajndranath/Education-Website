@@ -177,5 +177,116 @@ document.addEventListener('scroll', () => {
 });
 
 
+//news portal script
+let autoScroll = true;
+let userActive = true;
+let autoScrollTimeout;
 
-        
+
+const newsData = [
+    { date: "2024-05-23", title: "Rsmt bca student 1", content: "Lorem ipsum dolor sit amet, consectetur adipiscin...", url: "https://example.com/news1" },
+    { date: "2024-05-15", title: "News update 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news2" },
+    { date: "2024-05-20", title: "News Title 3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news3" },
+    { date: "2024-05-25", title: "News Title 4", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news4" },
+    { date: "2024-05-23", title: "News Title 6", content: "Lorem ipsum dolor sit amet, consectetur adipiscin...", url: "https://example.com/news5" },
+    { date: "2024-05-15", title: "News update 7", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news6" },
+    { date: "2024-05-20", title: "News Title 8", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news7" },
+    { date: "2024-05-25", title: "News Title 9", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...", url: "https://example.com/news8" }
+];
+
+
+function createNewsItem({ date, title, content, url }) {
+    const listItem = document.createElement("li");
+    listItem.className = "news-item flex-row";
+
+    const dateElement = document.createElement("time");
+    dateElement.datetime = date;
+    dateElement.textContent = date;
+    listItem.appendChild(dateElement);
+
+    const h3 = document.createElement("h3");
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.textContent = title;
+    h3.appendChild(anchor);
+    listItem.appendChild(h3);
+
+    const p = document.createElement("p");
+    p.textContent = content;
+    listItem.appendChild(p);
+
+    return listItem;
+}
+
+function initializeNews() {
+    const newsList = document.getElementById("newsList");
+    const totalNewsItems = 200;
+
+    for (let i = 0; i < totalNewsItems; i++) {
+        newsData.forEach(news => {
+            const listItem = createNewsItem(news);
+            newsList.appendChild(listItem.cloneNode(true));
+        });
+    }
+}
+
+initializeNews();
+
+function scrollNews(direction) {
+    const newsList = document.getElementById("newsList");
+    const newsItems = document.querySelectorAll(".news-item");
+    const itemHeight = newsItems[0].offsetHeight;
+
+    gsap.to(newsList, {
+        y: `-=${direction * itemHeight}`,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        onComplete: () => {
+            if (direction === 1) {
+                newsList.appendChild(newsItems[0].cloneNode(true));
+                newsList.removeChild(newsItems[0]);
+            } else {
+                newsList.insertBefore(newsItems[newsItems.length - 1].cloneNode(true), newsList.firstElementChild);
+                newsList.removeChild(newsItems[newsItems.length - 1]);
+            }
+
+            if (direction === 1 && newsList.scrollTop === 0) {
+                newsList.scrollTop = newsList.scrollHeight;
+            } else if (direction === -1 && newsList.scrollTop === newsList.scrollHeight - newsList.clientHeight) {
+                newsList.scrollTop = 0;
+            }
+        }
+    });
+
+    resetAutoScrollTimeout();
+}
+
+function toggleAutoScroll() {
+    autoScroll = !autoScroll;
+    resetAutoScrollTimeout();
+}
+
+function autoScrollNews() {
+    if (!autoScroll) {
+        return;
+    }
+
+    scrollNews(1);
+    setTimeout(() => {
+        autoScrollNews();
+    }, 6000);
+}
+
+function resetAutoScrollTimeout() {
+    if (autoScrollTimeout) {
+        clearTimeout(autoScrollTimeout);
+    }
+
+    if (autoScroll && userActive) {
+        autoScrollTimeout = setTimeout(() => {
+            autoScrollNews();
+        }, 6000);
+    }
+}
+
+autoScrollNews();

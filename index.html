@@ -447,7 +447,7 @@
             <div class="home-section-inner inner-container flex-row" >
                 <div class="main-section flex-row">
                     <article class="section-title">
-                        <h2 id="animatedText">Welcome</h2>
+                        <h2 class="section-title-heading" id="animatedText">Welcome</h2>
                         <p class="paragrapgh">Rajarshi School of Management & Technology, a premier institute, offers cutting-edge
                             undergraduate and postgraduate programs in Computer Application and Management.
                             Positioned in Varanasi, the City of Light, RSMT blends modern management with the timeless
@@ -502,9 +502,9 @@
                         </div>
                     </aside>
                     <div class="grid-child-1 flex-col">
-                        <footer class="bottom-content">
+                        <footer class="bottom-content flex-col">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Admissions are open.</p>
-                            <div class="btn brand-btn">
+                            <div class="btn brand-btn flex-row">
                                 <button>Apply Now</button>
                                 <button>Enquiry</button>
                             </div>
@@ -512,7 +512,35 @@
                     </div>
                 </article>
             </div>
-        </section>        
+        </section> 
+        
+         <!-- News section--->
+         <section class="news-section">
+            <div class="inner-news-section inner-container flex-col">
+                <section class="title-heading flex-row">
+                    <h2 class="section-title-heading">News and Announcements</h2>
+                    <p class="news-paragrapgh">Catch Faster Than Parachutes at a show near you</p>
+                </section>
+            </div>
+         </section>
+
+         <section class="news-portal">
+            <div class="news-portal-inner inner-container flex-col">
+                <button type="button" class="arrow-top" onclick="scrollNews(-1)" title="arrow-up"><i data-feather="arrow-up-circle"></i></button>
+                <section class="news">
+                    <ul class="news-list" id="newsList">
+                        <!-- <li class="news-item flex-row">
+                            <time datetime="2024-05-23">May 25</time>
+                            <h3>News Title 4</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        </li> --> 
+                    </ul>
+                </section>
+                <button type="button" class="arrow-top" onclick="scrollNews(1)" title="arrow down" ><i data-feather="arrow-down-circle"></i></button>
+            </div>
+        </section>
+
+        
     </main>
 </div>
 

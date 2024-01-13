@@ -95,6 +95,11 @@
   .center {
     @include center();
   }
+
+  .section-title-heading{
+    position: relative;
+    font-size: 3rem;
+}
   
   .fs{
     // background-color: red;
